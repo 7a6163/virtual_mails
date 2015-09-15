@@ -1,0 +1,31 @@
+<%= link_to 'Clear', clear_emails_path, :method => :delete, :data => {:confirm => "Are you sure?"} %>
+<table>
+  <colgroup>
+    <col width="250px"></col>
+    <col width="300px"></col>
+    <col></col>
+    <col width="200px"></col>
+  </colgroup>
+  <tr>
+    <th>From</th>
+    <th>To</th>
+    <th>Subject</th>
+    <th>Date</th>
+  </tr>
+  <% @emails.each do |email| %>
+    <tr>
+      <td>
+        <%= email.from %>
+      </td>
+      <td>
+        <%= email.to %>
+      </td>
+      <td>
+        <%= link_to email.subject, email_path(:id => email.id) %>
+      </td>
+      <td>
+        <%= email.date %>
+      </td>
+    </tr>
+  <% end %>
+</table>
