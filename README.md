@@ -6,8 +6,7 @@
 A rails plugin that provides a virtual mail box and action mailer delivery method. You can send mail to this virtual mail box instead of real email service in development environment, and you can preview the emails in this virtual mail box in web page.
 
 ![image](https://cloud.githubusercontent.com/assets/3477613/13945269/e3e73f18-f046-11e5-9294-efcdba74b33c.png)  
-![image](https://cloud.githubusercontent.com/assets/3477613/13945281/ff7497ee-f046-11e5-8773-6b6e78146164.png)
-
+![image](https://cloud.githubusercontent.com/assets/3477613/13945579/6addb7fc-f049-11e5-8af0-91b92cae542e.png)
 
 ## Installation
 

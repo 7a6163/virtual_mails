@@ -16,5 +16,3 @@ gemspec
 gem 'jquery-rails'
 gem 'spring'
 gem 'spring-commands-rspec'
-gem 'simplecov', :require => false
-gem 'coveralls', :require => false

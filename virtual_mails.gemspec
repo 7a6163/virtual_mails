@@ -7,11 +7,11 @@ require "virtual_mails/version"
 Gem::Specification.new do |s|
   s.name        = "virtual_mails"
   s.version     = VirtualMails::VERSION
-  s.authors     = ["Chen Yi-Cyuan"]
+  s.authors     = ["Chen, Yi-Cyuan"]
   s.email       = ["emn178@gmail.com"]
   s.homepage    = "https://github.com/emn178/virtual_mails"
-  s.summary     = "An rails plugin that provides a virtual mail box and action mailer delivery method."
-  s.description = "An rails plugin that provides a virtual mail box and action mailer delivery method."
+  s.summary     = "A rails plugin that provides a virtual mail box and action mailer delivery method."
+  s.description = "A rails plugin that provides a virtual mail box and action mailer delivery method."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "LICENSE.txt", "Rakefile", "README.md", "CHANGELOG.md"]
@@ -24,4 +24,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rake", "~> 10.0"
   s.add_development_dependency "rspec-rails"
   s.add_development_dependency "rspec-its"
+  s.add_development_dependency "simplecov"
+  s.add_development_dependency "coveralls"
 end

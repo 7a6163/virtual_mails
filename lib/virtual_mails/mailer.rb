@@ -8,7 +8,7 @@ module VirtualMails
 
     def deliver!(mail)
       mails = Email.all
-      mails << Email.new(mail)
+      mails.unshift(Email.new(mail))
       Rails.cache.write(CacheKey, mails)
     end
   end
