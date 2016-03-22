@@ -1,9 +1,13 @@
 # Virtual Mails
 
-[![Build Status](https://api.travis-ci.org/emn178/virtual_mails.png)](https://travis-ci.org/emn178/virtual_mails)  
+[![Build Status](https://api.travis-ci.org/emn178/virtual_mails.png)](https://travis-ci.org/emn178/virtual_mails)
 [![Coverage Status](https://coveralls.io/repos/emn178/virtual_mails/badge.svg?branch=master)](https://coveralls.io/r/emn178/virtual_mails?branch=master)
 
-An rails plugin that provides a virtual mail box and action mailer delivery method. You can send mail to this virtual mail box instead of real email service in development environment, and you can preview the emails in this virtual mail box in web page.
+A rails plugin that provides a virtual mail box and action mailer delivery method. You can send mail to this virtual mail box instead of real email service in development environment, and you can preview the emails in this virtual mail box in web page.
+
+![image](https://cloud.githubusercontent.com/assets/3477613/13945269/e3e73f18-f046-11e5-9294-efcdba74b33c.png)  
+![image](https://cloud.githubusercontent.com/assets/3477613/13945281/ff7497ee-f046-11e5-8773-6b6e78146164.png)
+
 
 ## Installation
 
