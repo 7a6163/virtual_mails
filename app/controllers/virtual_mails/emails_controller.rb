@@ -3,7 +3,7 @@ module VirtualMails
     before_action :find_mail, :only => [:show, :raw]
 
     def index
-      @emails = Email.all
+      @emails = Email.all.reverse
     end
 
     def show

@@ -39,6 +39,11 @@ config.action_mailer.delivery_method = :virtual
 ## Usage
 Now, you can go to http://localhost:3000/virtual_mails and check the emails!
 
+## Rails 5
+You have to enable caching in development in Rails 5
+
+  rails dev:cache
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

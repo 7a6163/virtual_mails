@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.2.0 / 2017-06-17
+### Added
+- Rails 5 support
+
 ## v0.1.3 / 2017-03-09
 ### Fixed
 - csrf issue.
