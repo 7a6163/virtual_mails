@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 module VirtualMails
   class EmailsController < VirtualMails::ApplicationController
-    before_action :find_mail, :only => [:show, :raw]
+    before_action :find_mail, only: %i[show raw]
 
     def index
       @emails = Email.all.reverse
@@ -10,7 +12,7 @@ module VirtualMails
     end
 
     def raw
-      render :plain => @email.raw
+      render plain: @email.raw
     end
 
     def clear

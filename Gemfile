@@ -14,5 +14,3 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 
 gem 'jquery-rails'
-gem 'spring'
-gem 'spring-commands-rspec'

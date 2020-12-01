@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 module VirtualMails
   class Email
     include ActionView::Helpers::TagHelper
 
     attr_accessor :message
+
     delegate :subject, :date, to: :message
 
     def initialize(message)
@@ -14,18 +17,18 @@ module VirtualMails
     end
 
     def from
-      @message.header.fields.find{|f| f.name == "From"}.value 
+      @message.header.fields.find { |f| f.name == 'From' }.value
     end
 
     def to
-      addresses = @message.header.fields.find{|f| f.name == "To"}.address_list.addresses
+      addresses = @message.header.fields.find { |f| f.name == 'To' }.address_list.addresses
       address = addresses[0].to_s
       count = addresses.length
       count > 1 ? address + ", ...#{count - 1} more" : address
     end
 
     def list_to
-      @message.header.fields.find{|f| f.name == "To"}.value
+      @message.header.fields.find { |f| f.name == 'To' }.value
     end
 
     def body
@@ -41,40 +44,48 @@ module VirtualMails
     end
 
     def self.all
-      emails = Rails.cache.fetch(CacheKey) do
-        emails = []
+      VirtualMails::Mailer.cache.fetch(CACHE_KEY) do
+        []
       end
-      emails
     end
 
     def self.find(id)
-      mail = all.find { |mail| mail.id == id }
+      mail = all.find { |m| m.id == id }
       raise ActiveRecord::RecordNotFound if mail.nil?
+
       mail
     end
 
     def self.clear
-      Rails.cache.delete(CacheKey)
+      VirtualMails::Mailer.cache.delete(CACHE_KEY)
     end
 
     private
 
     def html
-      @message.html_part ? @message.html_part.body.decoded : nil
+      if @message.html_part
+        @message.html_part.body.decoded
+      else
+        @message.content_type =~ /html/ ? plain : nil
+      end
     end
 
     def html_tag
       content = html
-      content_tag :iframe, '', :srcdoc => content, :onload => 'resizeIframe(this)' unless content.nil?
+      content_tag :iframe, '', srcdoc: content, onload: 'resizeIframe(this)' unless content.nil?
     end
 
     def plain
-      @message.multipart? ? (@message.text_part ? @message.text_part.body.decoded : nil) : @message.body.decoded
+      if @message.multipart?
+        @message.text_part ? @message.text_part.body.decoded : nil
+      else
+        @message.body.decoded
+      end
     end
 
     def plain_tag
       content = plain
-      content_tag :pre, content unless content.nil?      
+      content_tag :pre, content unless content.nil?
     end
   end
 end

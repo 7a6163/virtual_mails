@@ -1,13 +1,14 @@
+# frozen_string_literal: true
+
 RSpec.describe VirtualMails::Mailer do
-  Email = VirtualMails::Email
   let(:mailer) { Mailer.new({}) }
   let(:mail) { Mail.new }
 
-  describe "#deliver!" do
-    subject { Email.all }
-    before { 
-      Email.clear
-      mailer.deliver! mail 
+  describe '#deliver!' do
+    subject { VirtualMails::Email.all }
+    before {
+      VirtualMails::Email.clear
+      mailer.deliver! mail
     }
     its(:length) { should eq 1 }
   end

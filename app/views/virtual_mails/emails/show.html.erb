@@ -3,7 +3,7 @@
     <th>Subject</th>
     <td>
       <%= @email.subject %>
-      <%= link_to '(Raw)', raw_email_path(:id => @email.id), :target => 'raw' %>
+      <%= link_to '(Raw)', raw_email_path(id: @email.id), target: 'raw' %>
     </td>
   </tr>
   <tr>

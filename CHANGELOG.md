@@ -1,5 +1,12 @@
 # Change Log
 
+## v0.3.0 / 2020-12-01
+### Added
+- FileStore for cache instead of Rails.cache
+
+### Fixed
+- html preview
+
 ## v0.2.0 / 2017-06-17
 ### Added
 - Rails 5 support

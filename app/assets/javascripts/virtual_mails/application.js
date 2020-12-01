@@ -15,5 +15,5 @@
 //= require_tree .
 
 function resizeIframe(iframe) {
-  iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+  iframe.style.height = iframe.contentWindow.document.documentElement.scrollHeight + 'px';
 }
